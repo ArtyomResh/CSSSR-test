@@ -1,5 +1,25 @@
 .header-main
+	position relative
 	display block
+
+	&::before
+		position absolute
+		top -14px
+		right -63px
+
+		size(252px, 106px)
+
+		background url('/secret.png') no-repeat
+
+		content ''
+
 
 	&__title
 		visually-hidden()
+
+	&__logo-container
+		display block
+
+	&__case
+		margin-top 12px
+		margin-left 256px
