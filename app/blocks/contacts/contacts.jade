@@ -1,0 +1,27 @@
+// -local mixin
+mixin contacts-group(groupTitle, labelValue, inputValue)
+	.contacts__group(class='contacts__group_#{groupTitle}')
+		label.contacts__label(
+			class='contacts__label_#{groupTitle}'
+			for='#{groupTitle}'
+		)= labelValue
+
+		input.contacts__input(
+			class='contacts__input_#{groupTitle}'
+			id='#{groupTitle}'
+			type='text'
+			name='#{groupTitle}'
+			value='#{inputValue}'
+			disabled
+		)
+
+
+mixin contacts()
+	+b('section').contacts&attributes(attributes)
+		block contacts
+
+		+contacts-group('fullname', 'Полное ФИО', 'Реш Артём Рамисович')
+		+contacts-group('birthyear', 'Год рождения', '1993')
+		+contacts-group('location', 'Место жительства', 'г. Тула, Россия')
+		+contacts-group('skype', 'Скайп', 'stggev')
+		+contacts-group('email', 'Почта', 'artyomresh@gmail.com')

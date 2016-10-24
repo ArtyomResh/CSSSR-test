@@ -1,0 +1,50 @@
+//- local mixin
+mixin skill(skillTitle, labelValue, status)
+	if status === 'checked'
+		input.skills__input(
+			class='skills__input_#{skillTitle}'
+			id='#{skillTitle}'
+			type='checkbox'
+			name='#{skillTitle}'
+			checked
+		)
+	else
+		input.skills__input(
+			class='skills__input_#{skillTitle}'
+			id='#{skillTitle}'
+			type='checkbox'
+			name='#{skillTitle}'
+		)
+
+	label.skills__label(
+		class='skills__label_#{skillTitle}'
+		for='#{skillTitle}'
+	)= labelValue
+
+mixin skills()
+	+b('section').skills&attributes(attributes)
+		block	skills title
+			h2.skills__title
+		block skills text
+			p.skills__text
+
+		ul.skills__list
+			li.skills__item: +skill('bem','БЭМ/OOCSS', 'checked')
+			li.skills__item: +skill('jade','Pug (Jade)')
+			li.skills__item: +skill('preproc','Stylus/LESS/SASS', 'checked')
+			li.skills__item: +skill('svg','Работаю с SVG', 'checked')
+			li.skills__item: +skill('semantics','Верстаю семантично', 'checked')
+			li.skills__item: +skill('a11y','Accessibility (A11Y)')
+			li.skills__item: +skill('es15-16','ES2015/ES2016')
+			li.skills__item: +skill('gulp-grunt','Gulp/GRUNT', 'checked')
+			li.skills__item: +skill('webpack','Webpack')
+			li.skills__item: +skill('bebgl','Дружу с WebGL')
+			li.skills__item: +skill('jqueryt','jQuery')
+			li.skills__item: +skill('angular','Знаю/изучаю Angular')
+			li.skills__item: +skill('react','Знаю/изучаю React')
+			li.skills__item: +skill('node','Знаю/изучаю Node.js', 'checked')
+			li.skills__item: +skill('git','Использую Git','checked')
+			li.skills__item: +skill('bullseye','С глазомером всё ок','checked')
+			li.skills__item: +skill('blog','Читаю blog.csssr.ru','checked')
+			li.skills__item: +skill('lazy','Я ленивый(-ая)')
+			li.skills__item: +skill('english','У меня хороший английский','checked')

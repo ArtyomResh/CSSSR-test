@@ -5,6 +5,17 @@ clearfix()
 		clear both
 		content ''
 
+// Hide any element that should be seen by readers, but not by users.
+visually-hidden()
+	position absolute
+	overflow hidden
+	clip rect(0 0 0 0)
+	height 1px
+	width 1px
+	margin -1px
+	padding 0
+	border 0
+
 // Fix no working `-webkit-text-size-adjust: 100%;` in Android.
 fix-text-size-adjust()
 	background-image linear-gradient(transparent, transparent)

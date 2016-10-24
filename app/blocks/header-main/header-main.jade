@@ -1,0 +1,9 @@
+mixin header-main()
+	+b('header').header-main&attributes(attributes)
+		block header-main title
+
+			h1.header-main__title
+
+		a.header-main__logo-container(href='http://csssr.ru'): img.header-main__logo(src='/csssr-logo.png' alt='Логотип CSSSR')
+		br
+		img.header-main__case(src='/case.png' alt='Дело')

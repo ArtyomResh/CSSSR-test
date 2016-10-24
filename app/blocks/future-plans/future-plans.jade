@@ -1,0 +1,36 @@
+mixin plan(planTitle, labelValue, status)
+	if status === 'checked'
+		input.future-plans__input(
+			class='future-plans__input_#{planTitle}'
+			id='#{planTitle}'
+			type='radio'
+			name='future-plan'
+			value='#{planTitle}'
+			checked
+		)
+	else
+		input.future-plans__input(
+			class='future-plans__input_#{planTitle}'
+			id='#{planTitle}'
+			type='radio'
+			name='future-plan'
+			value='#{planTitle}'
+		)
+
+	label.future-plans__label(
+		class='future-plans__label_#{planTitle}'
+		for='#{planTitle}'
+	)= labelValue
+
+mixin future-plans()
+	+b('section').future-plans&attributes(attributes)
+		block future-plans title
+			h2.future-plans__title
+		block future-plans text
+			p.future-plans__text
+
+		ul.future-plans__list
+			li.future-plans__item: +plan('html', 'Верстать', 'checked')
+			li.future-plans__item: +plan('js', 'Прокачиваться в JS')
+			li.future-plans__item: +plan('management', 'Менеджерство')
+			li.future-plans__item: +plan('else', 'Другое')

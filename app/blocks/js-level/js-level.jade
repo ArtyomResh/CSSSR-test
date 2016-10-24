@@ -1,0 +1,14 @@
+mixin js-level()
+	+b('section').js-level&attributes(attributes)
+		block js-level title
+			h2.js-level__title
+
+		.js-level__scale
+			.js-level__pointer
+			.js-level__bar
+			.js-level__breakpoints
+				block js-level breakpoints
+				span.js-level__breakpoint Не владею
+				span.js-level__breakpoint Использую готовые решения
+				span.js-level__breakpoint Использую готовые решения и умею их переделывать
+				span.js-level__breakpoint Пишу сложный JS с нуля
