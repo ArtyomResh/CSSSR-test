@@ -7,9 +7,12 @@
 		margin-bottom 15px
 
 	&__pointer
+		position relative
+		left 300px
 		sprite ($pointer_triangle)
 		margin-bottom 3px
-		margin-left 140px
+
+		cursor pointer
 
 	&__bar
 		size(770px, 6px)
@@ -39,6 +42,9 @@
 		&:first-child
 			width 146px
 
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+				width 140px
+
 		&:nth-child(2)
 			width 167px
 
@@ -67,3 +73,7 @@
 			padding-top 27px
 
 			background-position 137px 0
+
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+				width 145px
+				background-position 142px 0
