@@ -1,5 +1,5 @@
 // -local mixin
-mixin contacts-group(groupTitle, labelValue, inputValue)
+mixin contacts-group(groupTitle, labelValue, inputValue, type)
 	.contacts__group(class='contacts__group_#{groupTitle}')
 		label.contacts__label(
 			class='contacts__label_#{groupTitle}'
@@ -9,7 +9,7 @@ mixin contacts-group(groupTitle, labelValue, inputValue)
 		input.contacts__input(
 			class='contacts__input_#{groupTitle}'
 			id='#{groupTitle}'
-			type='text'
+			type='#{type}'
 			name='#{groupTitle}'
 			value='#{inputValue}'
 		)
@@ -19,8 +19,8 @@ mixin contacts()
 	+b('section').contacts&attributes(attributes)
 		block contacts
 
-		+contacts-group('fullname', 'Полное ФИО', 'Реш Артём Рамисович')
-		+contacts-group('birthyear', 'Год рождения', '1993')
-		+contacts-group('location', 'Место жительства', 'г. Тула, Россия')
-		+contacts-group('skype', 'Скайп', 'stggev')
-		+contacts-group('email', 'Почта', 'artyomresh@gmail.com')
+		+contacts-group('fullname', 'Полное ФИО', 'Реш Артём Рамисович', 'text')
+		+contacts-group('birthyear', 'Год рождения', '1993', 'text')
+		+contacts-group('location', 'Место жительства', 'г. Тула, Россия', 'text')
+		+contacts-group('skype', 'Скайп', 'stggev', 'text')
+		+contacts-group('email', 'Почта', 'artyomresh@gmail.com', 'email')

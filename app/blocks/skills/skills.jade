@@ -44,7 +44,28 @@ mixin skills()
 			li.skills__item: +skill('react','Знаю/изучаю React')
 			li.skills__item: +skill('node','Знаю/изучаю Node.js', 'checked')
 			li.skills__item: +skill('git','Использую Git','checked')
-			li.skills__item: +skill('bullseye','С глазомером всё ок','checked')
-			li.skills__item: +skill('blog','Читаю blog.csssr.ru','checked')
+
+			li.skills__item
+				input.skills__input.skills__input_bullseye#bullseye(
+					type='checkbox'
+					name='bullseye'
+					checked
+					)
+
+				label.skills__label.skills__label_bullseye(for='bullseye') С
+					span.skills__label-sub глазомером
+						span.skills__label-sub всё
+							span.skills__label-sub ок
+
+			li.skills__item
+				input.skills__input.skills__input_blog#blog(
+					type='checkbox'
+					name='blog'
+					checked
+					)
+
+				label.skills__label.skills__label_blog(for='blog') Читаю
+					a(href='http://blog.csssr.ru/') blog.csssr.ru
+
 			li.skills__item: +skill('lazy','Я ленивый(-ая)')
 			li.skills__item: +skill('english','У меня хороший английский','checked')
