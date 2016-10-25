@@ -1,2 +1,69 @@
 .js-level
 	display block
+
+	padding-top 25px
+
+	&__title
+		margin-bottom 15px
+
+	&__pointer
+		sprite ($pointer_triangle)
+		margin-bottom 3px
+		margin-left 140px
+
+	&__bar
+		size(770px, 6px)
+
+		background url('/underline.png') repeat-x
+		background-position 0 105%
+
+	&__breakpoints
+		display flex
+		align-items baseline
+
+		margin-top -5px
+
+	&__breakpoint
+		display inline-block
+
+		padding-top 20px
+
+		font-size 13px
+		font-weight bold
+		line-height 36px
+
+		background url('/breakpoint.png') no-repeat
+
+		cursor pointer
+
+		&:first-child
+			width 146px
+
+		&:nth-child(2)
+			width 167px
+
+			margin-right 58px
+
+			background-position 2px -13px
+
+		&:nth-child(3)
+			width 167px
+
+			margin-right 94px
+
+			padding-top 27px
+
+			line-height 19px
+
+			background-position 2px -13px
+
+		&:last-child
+			align-self  center
+
+			width 140px
+
+			margin-top -5px
+
+			padding-top 27px
+
+			background-position 137px 0

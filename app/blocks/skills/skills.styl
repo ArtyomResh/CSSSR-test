@@ -1,2 +1,64 @@
 .skills
 	display block
+
+	padding-top 32px
+
+	&__title
+		margin-bottom -4px
+
+	&__text
+		width 775px
+
+		margin-bottom 15px
+
+	&__input
+		display none
+
+		&:checked + .skills__label::after
+			position absolute
+			top 8px
+			left 4px
+
+			display block
+
+			sprite ($checkbox_cross)
+
+			content ''
+
+	&__list
+		display flex
+		align-content flex-start
+		flex-direction column
+		flex-wrap wrap
+
+		height 270px
+
+		padding-top 12px
+
+	&__item
+		position relative
+
+		width 255px
+
+		margin-bottom 9px
+
+		padding-left 27px
+
+		&:nth-child(n+8)
+			width 270px
+
+	&__label
+		font-size 21px
+		font-weight bold
+		line-height 25px
+
+		&::before
+			position absolute
+			top 6px
+			left 0
+
+			display block
+
+			sprite ($checkbox_border)
+
+			content ''
